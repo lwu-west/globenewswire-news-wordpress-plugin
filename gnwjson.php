@@ -4,7 +4,7 @@
   Plugin URI:
   Description: GlobeNewswire News Plugin enables a shortcut to display press releases from GlobeNewswire, one of the world's largest newswire distribution networks.
   Author: GlobeNewswire
-  Version: 1.0.0
+  Version: 1.0.1
   Author URI: http://www.globenewswire.com
  */
 class GnwNews {
