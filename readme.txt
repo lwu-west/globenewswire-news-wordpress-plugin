@@ -1,8 +1,10 @@
-=== GlobeNewswire News plugin ===
-Tags: GlobeNewswire, news
+=== GlobeNewswire News ===
+Contributors: gnwbyintrado
+Tags: GlobeNewswire, news, newswire
 Requires at least: 3.1.0
 Tested up to: 5.5.1
 Requires PHP: 5.3
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,7 +71,7 @@ The "url" parameter
 
 	 /Organization/{TOKEN}
 
-	 The TOKEN is obtained from GlobeNewswire support staff. Each organization has a unique TOKEN, but several related organizations, such as a parent company and a subsidiary, can be combined into a single feed using multiple tokens, separated by an ì$î character:
+	 The TOKEN is obtained from GlobeNewswire support staff. Each organization has a unique TOKEN, but several related organizations, such as a parent company and a subsidiary, can be combined into a single feed using multiple tokens, separated by an ‚Äú$‚Äù character:
 
 	 /Organization/{TOKEN}${TOKEN}
 
@@ -84,7 +86,7 @@ The "url" parameter
 	/Keyword/{COMPLETE-TAG}
 
 
-	The Subject, SubjectCode and Language attributes may be repeated for a logical ìORî clause. For example, to include news releases related to earnings or dividends, include the Subject twice:
+	The Subject, SubjectCode and Language attributes may be repeated for a logical ‚ÄúOR‚Äù clause. For example, to include news releases related to earnings or dividends, include the Subject twice:
 
 	/Subject/ERN/Subject/DIV
 	/SubjectCode/1/SubjectCode/2
@@ -102,13 +104,13 @@ The "url" parameter
 
 
 	* Specify News Release Body Content
-	The following options specify the desired format for the news release body content. In all cases, the content is contained in the JSON ìdescriptionî attribute.
+	The following options specify the desired format for the news release body content. In all cases, the content is contained in the JSON ‚Äúdescription‚Äù attribute.
 
 
 	Content Type and Description
 
 	/Content/Brief
-	First paragraph (ì<p>î tag) of news release. If first element is not a <p> tag, then first 500 characters of body followed by ìÖî.
+	First paragraph (‚Äú<p>‚Äù tag) of news release. If first element is not a <p> tag, then first 500 characters of body followed by ‚Äú‚Ä¶‚Äù.
 
 	/Content/BriefPlain
 	Same as Brief, but will not have any HTML mark-up. This is the default.
@@ -117,16 +119,16 @@ The "url" parameter
 	Contains the full-text of the news release, including basic HTML mark-up.
 
 	/Content/Photo
-	Same as FullText, plus any attached photos. The ìaltî attribute of the <img> tag will be the caption, or the title if no caption.
+	Same as FullText, plus any attached photos. The ‚Äúalt‚Äù attribute of the <img> tag will be the caption, or the title if no caption.
 
 
 	* Remove Anchor tags
-	 When using the FullText or Photo content options, the full-text of the news release is included in the feed. The news release may include a number of anchor tags (<a>) with URLs pointing to globenewswire.com, the issuing companyís Website, or other locations. If these links are not desired, they can be removed using the ìnolinksî option as follows:
+	 When using the FullText or Photo content options, the full-text of the news release is included in the feed. The news release may include a number of anchor tags (<a>) with URLs pointing to globenewswire.com, the issuing company‚Äôs Website, or other locations. If these links are not desired, they can be removed using the ‚Äúnolinks‚Äù option as follows:
 
 	 /Nolinks/True
 
-	 When ìnolinksî is set, the text within the <a> tag is preserved, but the <a> tag itself is removed. For example, the text string ìmycompany.comî in the following <a> tag will be preserved:
-	<a href=îhttps://mycompany.comî>mycompany.com</a>
+	 When ‚Äúnolinks‚Äù is set, the text within the <a> tag is preserved, but the <a> tag itself is removed. For example, the text string ‚Äúmycompany.com‚Äù in the following <a> tag will be preserved:
+	<a href=‚Äùhttps://mycompany.com‚Äù>mycompany.com</a>
 
 
 
@@ -185,12 +187,12 @@ The "url" parameter
 
 
 	* Chronological Sort Order
-	By default, news releases are sorted in reverse chronological order: most recent first. The order can be reversed by setting the ìSortî parameter to ìAscî (indicating ascending order):
+	By default, news releases are sorted in reverse chronological order: most recent first. The order can be reversed by setting the ‚ÄúSort‚Äù parameter to ‚ÄúAsc‚Äù (indicating ascending order):
 
 	/Sort/Asc
 
 
-	The default is ìdecendingî order:
+	The default is ‚Äúdecending‚Äù order:
 	/Sort/Desc
 
 
@@ -203,7 +205,7 @@ The "url" parameter
 	Paging:
 	/Start/20/Max/20
 
-	The maximum value for ìMaxî should be 50. The hard limit of articles that can be included in one feed is 100.
+	The maximum value for ‚ÄúMax‚Äù should be 50. The hard limit of articles that can be included in one feed is 100.
 
 
 	* Combining Attributes
@@ -221,12 +223,12 @@ The "url" parameter
 
 
 	* Feed Formatting Options
-	All of the parameters specified above are used to filter the organizations and news releases that are included in the feed. The parameters described in this section control certain elements of the feedís format and metadata.
+	All of the parameters specified above are used to filter the organizations and news releases that are included in the feed. The parameters described in this section control certain elements of the feed‚Äôs format and metadata.
 
 
-	/FeedTitle/{string} ñ sets the feedís <title> element.
-	/ShowLogo/{true|false} ñ includes the company logo, if available. The default is false.
-	/TargetLink/{newsroom|niftXml|newsArchiveRelativeUrl|newsarchive|layoutID}ñ default is ìnewsroomî.
+	/FeedTitle/{string} ‚Äì sets the feed‚Äôs <title> element.
+	/ShowLogo/{true|false} ‚Äì includes the company logo, if available. The default is false.
+	/TargetLink/{newsroom|niftXml|newsArchiveRelativeUrl|newsarchive|layoutID}‚Äì default is ‚Äúnewsroom‚Äù.
 
 
 
@@ -411,5 +413,3 @@ The "url" parameter
 	Yakutsk Standard Time
 	Ekaterinburg Standard Time
 	Pacific Standard Time
-
-
